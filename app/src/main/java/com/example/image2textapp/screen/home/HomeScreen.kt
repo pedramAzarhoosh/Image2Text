@@ -29,6 +29,9 @@ import androidx.core.content.ContextCompat
 import com.example.image2textapp.R
 import android.Manifest
 import android.app.Activity
+import android.content.Intent
+import android.provider.MediaStore
+
 
 
 @Composable
@@ -49,15 +52,13 @@ fun homeScreen(){
                 fontWeight = FontWeight.Bold)
         }
 
-        val context = LocalContext.current
+
 
         Row (modifier = Modifier
             .fillMaxWidth()
             .padding(top = 20.dp), horizontalArrangement = Arrangement.Center,){
             OutlinedButton(onClick = {
-                if(checkPermission(context)){
-                    captureImage()
-                }else requestPermission(context as Activity)
+
             }, shape = RoundedCornerShape(5.dp),
                 modifier = Modifier
                     .fillMaxWidth()
@@ -69,7 +70,7 @@ fun homeScreen(){
         Row (modifier = Modifier
             .fillMaxWidth()
             .padding(top = 0.dp), horizontalArrangement = Arrangement.Center,){
-            OutlinedButton(onClick = { /*TODO*/ }, shape = RoundedCornerShape(5.dp),
+            OutlinedButton(onClick = { detectText() }, shape = RoundedCornerShape(5.dp),
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(horizontal = 50.dp)) {
@@ -81,19 +82,7 @@ fun homeScreen(){
 }
 
 
-private fun checkPermission(context : Context):Boolean{
-    val cameraPermission = ContextCompat.checkSelfPermission(context,CAMERA_SERVICE)
-    return cameraPermission == PackageManager.PERMISSION_GRANTED
-}
-
-
-private fun requestPermission(activity:Activity){
-    val permission_code = 200
-    ActivityCompat.requestPermissions(activity, arrayOf(Manifest.permission.CAMERA),permission_code)
-}
-
-
-private fun captureImage(){
+private fun detectText(){
 
 }
 

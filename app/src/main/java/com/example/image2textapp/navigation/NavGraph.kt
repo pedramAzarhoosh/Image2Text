@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.example.image2textapp.screen.home.homeScreen
+import com.example.image2textapp.screen.scanner.scannerScreen
 import com.example.image2textapp.screen.splash.splashScreen
 
 
@@ -19,6 +20,9 @@ fun setupNavGraph(navController: NavHostController){
         }
         composable(route = Screen.Home.route) {
             homeScreen()
+        }
+        composable(route = Screen.ScannerScr.route){
+            scannerScreen()
         }
     }
 }

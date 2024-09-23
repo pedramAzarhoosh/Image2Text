@@ -70,4 +70,18 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:2.7.7")
 
     implementation("com.google.android.gms:play-services-mlkit-text-recognition:19.0.1")
+
+    //implementation("com.google.accompanist:accompanist-permissions:0.36.0")
+
+    // CameraX
+    val camerax_version = "1.0.1"
+    implementation("androidx.camera:camera-camera2:$camerax_version")
+    implementation("androidx.camera:camera-lifecycle:$camerax_version")
+    implementation("androidx.camera:camera-view:1.0.0-alpha27")
+
+    // Icons
+    implementation("androidx.compose.material:material-icons-extended:1.7.2")
+
+    // Coil
+    implementation("io.coil-kt:coil-compose:1.4.0")
 }
